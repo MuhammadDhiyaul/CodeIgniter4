@@ -10,9 +10,9 @@ class Pages extends BaseController
         $data = [
             'title' => 'Home | CRUD'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/home');
-        echo view('layout/footer');
+        // echo view('layout/header', $data);
+        return view('pages/home', $data);
+        // echo view('layout/footer');
     }
 
     public function about()
@@ -21,8 +21,19 @@ class Pages extends BaseController
         $data = [
             'title' => 'About | CRUD'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/about');
-        echo view('layout/footer');
+        // echo view('layout/header');
+        return view('pages/about', $data);
+        // echo view('layout/footer');
+    }
+
+    public function contact()
+    {
+        // return view('pages/about');
+        $data = [
+            'title' => 'Contact | CRUD'
+        ];
+        // echo view('layout/header');
+        return view('pages/contact', $data);
+        // echo view('layout/footer');
     }
 }
