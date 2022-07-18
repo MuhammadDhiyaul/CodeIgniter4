@@ -41,6 +41,9 @@ $routes->get('/about', 'Pages::about');
 $routes->get('/contact', 'Pages::contact');
 
 $routes->get('/buku', 'Buku::index');
+$routes->get('/buku/create', 'Buku::create');
+$routes->post('/buku/save', 'Buku::save');
+$routes->get('/buku/(:segment)', 'Buku::detail/$1');
 
 
 
