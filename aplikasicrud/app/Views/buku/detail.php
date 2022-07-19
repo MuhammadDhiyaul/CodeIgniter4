@@ -16,9 +16,16 @@
                         <p class="card-text">Penulis : <?= $buku['penulis']; ?></p>
                         <p class="card-text"><small class="text-muted">Penerbit : <?= $buku['penerbit']; ?></small></p>
 
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href=""class="btn btn-danger">Hapus</a>
-                        <a href="/buku" class="btn btn-secondary">Kembali ke daftar buku !</a>
+                        <a href="/buku/edit/<?= $buku['slug']; ?>" class="btn btn-warning">Edit</a>
+
+                        <form action="/buku/<?= $buku['id']; ?>" method="post" class="d-inline">
+                            <?= csrf_field(); ?>
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-danger" onClick="return confirm('Apakah anda yakin?');">Hapus</button>
+                        </form>
+                        <br>
+
+                        <a href="/buku" class="btn btn-secondary mt-2">Kembali ke daftar buku !</a>
                     </div>
                 </div>
             </div>

@@ -42,8 +42,11 @@ $routes->get('/contact', 'Pages::contact');
 
 $routes->get('/buku', 'Buku::index');
 $routes->get('/buku/create', 'Buku::create');
+$routes->get('/buku/edit/(:segment)', 'Buku::edit/$1');
+$routes->post('/buku/update/(:segment)', 'Buku::update/$1');
 $routes->post('/buku/save', 'Buku::save');
-$routes->get('/buku/(:segment)', 'Buku::detail/$1');
+$routes->delete('/buku/(:num)', 'Buku::delete/$1');
+$routes->get('/buku/(:any)', 'Buku::detail/$1');
 
 
 
